@@ -7,7 +7,7 @@ const Summary = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/expenses/summary/${month}`)
+      .get(`${process.env.REACT_APP_API_URL}/api/expenses/summary/${month}`)
       .then((res) => setSummary(res.data))
       .catch((err) => console.error(err));
   }, [month]);
